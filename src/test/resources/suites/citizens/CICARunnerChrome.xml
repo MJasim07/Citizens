@@ -1,0 +1,54 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression Tests CMS" verbose="1">
+
+    <listeners>
+        <listener class-name="com.codetru.listeners.AnnotationTransformer" />
+    </listeners>
+
+    <!-- Define parameters at suite level -->
+    <parameter name="BROWSER" value="chrome" />
+    <parameter name="USERID" value="7251001" />
+    <parameter name="PASSWORD" value="RockStar_K8" />
+
+    <!-- Define the main test cycle -->
+    <test name="CITIZENS REGRESSION TEST">
+        <classes>
+            <class name="com.codetru.project.cicalife.testcases.HomePageTest" />
+            <class name="com.codetru.project.cicalife.testcases.Step1_Test" />   
+            <!--   <class name="com.codetru.project.cicalife.testcases.Step2_Test" />
+          <class name="com.codetru.project.cicalife.testcases.Step3_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step4_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step5_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step6_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step7_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step8_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step9_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step10_Test" />-->
+        </classes>
+        
+    </test>
+	  <test name="CITIZENS REGRESSION TESwqwT">
+        <classes>
+            <class name="com.codetru.project.cicalife.testcases.HomePageTest" />
+            <class name="com.codetru.project.cicalife.testcases.Step1_Test" />   
+            <class name="com.codetru.project.cicalife.testcases.Step2_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step3_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step4_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step5_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step6_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step7_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step8_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step9_Test" />
+            <class name="com.codetru.project.cicalife.testcases.Step10_Test" />
+        </classes>
+        
+    </test>
+    <!-- Data Provider Configuration -->
+    <test name="Data Provider">
+        <classes>
+            <class name="com.codetru.dataprovider.StateDataProvider" />
+        </classes>
+    </test>
+
+</suite>
