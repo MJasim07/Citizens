@@ -1,8 +1,8 @@
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Java CI with Maven on Windows](https://github.com/anhtester/AutomationFrameworkSelenium/actions/workflows/maven.yml/badge.svg)](https://github.com/anhtester/AutomationFrameworkSelenium/actions/workflows/maven.yml)
+[![Java CI with Maven on Windows](https://github.com/anhtester/AutomationFrameworkSelenium/actions/workflows/maven.yml/badge.svg)](https://github.com/MJasim07/Citizens)
 
-## Test Automation Framework Selenium Java with TestNG building by Anh Tester
+## Test Automation Framework Selenium Java with TestNG building by Mohammad Jasim
 
 🔆 **SOME FEATURES IN FRAMEWORK**
 
@@ -61,7 +61,7 @@
 
 ![image](https://user-images.githubusercontent.com/87883620/161657646-3dd652c6-a310-4006-a0cb-de63e2e87e36.png)
 
-- The base value read from Enums (src/main/java/anhtester/com/enums)
+- The base value read from Enums (src/main/java/codetru/com/enums)
 - Setup on TestListener and BaseTest
 
 ![image](https://user-images.githubusercontent.com/87883620/161657754-c29b1ee9-f2fb-44b3-bee0-9f425a7cab6f.png)
@@ -90,7 +90,7 @@
 - Config **true/false** in config.properties
   (**_src/test/resources/config/config.properties_**)
 - send_email_to_users=**true** is enable send mail
-- Config mail with email and password in **_src/main/java/anhtester/com/mail/EmailConfig.java_**
+- Config mail with email and password in **_src/main/java/codetru/com/mail/EmailConfig.java_**
 - Note: if Gmail, you use App Password
 
 ![image](https://user-images.githubusercontent.com/87883620/161658851-2aa41091-ac99-45d9-a79f-aaa828052efb.png)
@@ -100,7 +100,7 @@
 **6. Write Log to file**
 
 - Call class: Log.info , Log.pass, Log.error,... (**Log** is a custom global class from Log4j2)
-  (**_import utils.com.anhtester.LogUtils.java_**)
+  (**_import utils.com.codetru.LogUtils.java_**)
 
 ![image](https://user-images.githubusercontent.com/87883620/161657858-d333ac1d-9e7b-4c1b-baac-151a237a1fa0.png)
 
@@ -118,13 +118,13 @@
 **8. Read data test from Excel file**
 
 - Create function with annotaion **DataProvider** on *
-  *src/test/java/anhtester/com/projects/website/crm/dataprovider/DataProviderManager.java**
+  *src/test/java/codetru/com/projects/website/crm/dataprovider/DataProviderManager.java**
 - Read excel with Map and Hashtable
 
 **9. Base function in the package**
 
-- **_src/main/java/anhtester/com/utils_**
-- **_src/main/java/anhtester/com/helpers_**
+- **_src/main/java/codetru/com/utils_**
+- **_src/main/java/codetru/com/helpers_**
 
 **10. Read data test from JSON file**
 
@@ -138,7 +138,7 @@
 
 **12. Call function to using sample**
 
-- All in one package: src/test/java/anhtester/com/projects/website/crm/testcases
+- All in one package: src/test/java/codetru/com/projects/website/crm/testcases
 
 ```
 + ClientTest
@@ -149,8 +149,8 @@
 
 **13. Send message/report to Telegram Bot**
 
-- Setup in src/main/java/anhtester/com/report/TelegramManager.java
-- Example: src/test/java/anhtester/com/projects/website/crm/testcases/TestSimpleCode.java
+- Setup in src/main/java/codetru/com/report/TelegramManager.java
+- Example: src/test/java/codetru/com/projects/website/crm/testcases/TestSimpleCode.java
 - Call in TestListener at onFinish TelegramManager.sendReportPath()
 
 ===How to get Token and start Bot===
@@ -168,8 +168,8 @@
 ```
 "chat": {
     "id": 123456789,
-    "first_name": "Anh Tester",
-    "username": "anhtester",
+    "first_name": "Jasim",
+    "username": "Tester",
     "type": "private"
 }
 ```
@@ -584,10 +584,5 @@ Document DataFaker: https://www.datafaker.net/documentation/getting-started/
  ┗ 📜README.md
 ```
 
-### I shall write document for my Framework. Coming soon...
+### I shall write the document for my Framework. Coming soon...
 
-## Copyright 2022 Anh Tester
-
-> Anh Tester Blog: https://anhtester.com/
-
-![Alt text](https://anhtester.com/uploads/logo/anhtester_logo_512.png?raw=true "Anh Tester - Automation Testing")
