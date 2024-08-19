@@ -115,14 +115,13 @@ public class Step_2Page_NV extends CommonPageCICA {
 		WebUI.clickElement(Proposed_ZipCode);
 
 		WebUI.scrollToElementAtBottom(NextStep2);
-		WebUI.sleep(0.5);
-		WebUI.waitForElementVisible(NextStep2);
-		WebUI.clickElement(NextStep2);
+//		WebUI.sleep(0.5);
+//		WebUI.clickElement(NextStep2);
 
 		WebUI.sleep(1);
 //		WebUI.verifyContains(getTextElement(Error_City_Message), Mandatory_Error);
 
-		WebUI.scrollToElementAtTop(city);
+//		WebUI.scrollToElementAtTop(city);
 		WebUI.waitForElementVisible(city);
 		WebUI.clickElement(city);
 		WebUI.sleep(1);

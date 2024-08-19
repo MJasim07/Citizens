@@ -7,9 +7,9 @@
 		  
 	</listeners>
 
-	<test name="CITIZENS REGRESSION TEST WITH MULTIPLE STATES - 7252873">
+	<test name="CITIZENS REGRESSION TEST WITH MULTIPLE STATES - 7250165, 883">
 		<parameter name="BROWSER" value="chrome" />
-		<parameter name="USERID" value="7250165" />
+		<parameter name="USERID" value="7250883" />
 		<parameter name="PASSWORD" value="RockStar_K8" />
 	<!--	 <parameter name="statex" value="GA"/>-->
 		<classes>

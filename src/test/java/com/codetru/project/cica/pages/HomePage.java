@@ -65,6 +65,7 @@ public class HomePage extends CommonPageCICA{
 		private By appointment_Status = By.xpath("//th[normalize-space()='License State']/following::tbody/tr[not(@style='background-color: red;')]/td[10]");
 		private By agentID_Popup_CloseButton = By.xpath("//ion-button[@class='md button button-small button-clear in-toolbar in-toolbar-color ion-activatable ion-focusable hydrated']");
 		
+		private By Licenses_Appointment_Data_Popup = By.xpath("//div[contains(text(),'Loading licenses and appointments data')]");
 		private By impNotice_Popup = By.xpath("//ion-backdrop/following-sibling::div/div/following-sibling::div/button");
 		
 		private By policypaymentBtn=By.xpath("//ion-button[text()=' Policy Payment ']");
@@ -102,7 +103,17 @@ public class HomePage extends CommonPageCICA{
 			WebUI.clickElement(profile_Icon);
 			WebUI.sleep(1);
 			WebUI.clickElement(licenses_Appointments_Tab);
-			WebUI.sleep(3);
+			WebUI.sleep(0.5);
+			try {
+				while(DriverManager.getDriver().findElement(Licenses_Appointment_Data_Popup).isDisplayed())
+				{
+					continue;
+				}
+				
+			} catch(Exception ex)
+			{
+				System.out.println("");
+			}
 			WebUI.waitForElementVisible(first_row_first_column);
 			WebUI.clickElement(first_row_first_column);
 			WebUI.sleep(2);

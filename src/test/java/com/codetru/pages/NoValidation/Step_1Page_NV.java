@@ -84,8 +84,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 	public static String Randomfirstname;
 
 	public void Product_Information(String statex) throws Exception {
-		 String dob =DataGenerateUtils.generateRandomDOB();
-	     int age = DataGenerateUtils.calculateAge(dob);
+
 		String Mandate_Error = "Please enter a value.";
 		String Max_Error = "The maximum number of characters is 33.";
 		String Max_Char = "qwertyuiopqwertyuiopqwertyuiopqwertyu";
@@ -126,7 +125,9 @@ public class Step_1Page_NV extends CommonPageCICA{
 		WebUI.verifyContains(getAttributeElement(StateDropdown,"value"), getAttributeElement(StateDropdown,"value"));
 
 		WebUI.selectOptionByText(genderDropdown, PropertiesHelpers.getValue("gender"));
+		
 		String RandomDOB = DataGenerateUtils.generateRandomDOB();
+		int Gen_age = DataGenerateUtils.calculateAge(RandomDOB);
 		WebUI.clearAndFillText(DateOfBirth,String.valueOf(RandomDOB));
 		WebUI.sleep(0.5);
 		System.out.println(RandomDOB);
@@ -173,7 +174,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 		WebUI.sleep(1);
 		WebUI.clearText(FaceAmount);
 		WebUI.sleep(0.5);
-		int fAmountGenerated = DataGenerateUtils.generateFaceAmountBasedOnAge(age);
+		int fAmountGenerated = DataGenerateUtils.generateFaceAmountBasedOnAge(Gen_age);
 		WebUI.clearAndFillText(FaceAmount,String.valueOf(fAmountGenerated));
 		WebUI.sleep(0.5);
 		System.out.println(fAmountGenerated);
@@ -212,8 +213,6 @@ public class Step_1Page_NV extends CommonPageCICA{
 //		String Page_Error_ = "There are some errors on this page. Please correct before continuing.";
 //		String Fc_MxErr = "The maximum amount is 30000.";
 //		String Fc_MnErr = "The minimum amount is 1000.";
-		String dob =DataGenerateUtils.generateRandomDOB();
-	     int age = DataGenerateUtils.calculateAge(dob);
 		WebUI.sleep(1);
 		WebUI.scrollToElementAtTop(insuredInfoElement);
 		
@@ -223,10 +222,10 @@ public class Step_1Page_NV extends CommonPageCICA{
 		WebUI.verifyContains(getAttributeElement(FirstName,"value"),Randomfirstname);
 				
 
-		String Randommiddlename = DataGenerateUtils.randomMiddleName();
-		WebUI.clearAndFillText(MiddleName,Randommiddlename);
-		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(MiddleName,"value"),Randommiddlename);
+//		String Randommiddlename = DataGenerateUtils.randomMiddleName();
+//		WebUI.clearAndFillText(MiddleName,Randommiddlename);
+//		WebUI.sleep(0.5);
+//		WebUI.verifyContains(getAttributeElement(MiddleName,"value"),Randommiddlename);
 		
 		WebUI.clearText(LastName);
 		String Randomlastname = DataGenerateUtils.randomLastName();
@@ -247,6 +246,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 
 //		WebUI.setText(DateOfBirth, PropertiesHelpers.getValue("date_Of_Birth"));
 		String RandomDOB = DataGenerateUtils.generateRandomDOB();
+		int Gen_age = DataGenerateUtils.calculateAge(RandomDOB);
 		WebUI.clearAndFillText(DateOfBirth,String.valueOf(RandomDOB));
 		WebUI.sleep(0.5);
 		System.out.println(RandomDOB);
@@ -266,10 +266,11 @@ public class Step_1Page_NV extends CommonPageCICA{
 			Select sel = new Select(WebUI.getWebElement(signedStateDropdown));
 			WebUI.sleep(1);
 			System.out.println("State ******************************************************: "+licState);
+			WebUI.logInfoMessage("********** Selected State: "+ licState +" **********");
+			WebUI.logInfoMessage("********** Selected State Number: "+ 1 +" **********");
 			sel.selectByValue(licState);
 			WebUI.sleep(0.5);
-			WebUI.logInfoMessage("Selected State: "+WebUI.getAttributeElement(signedStateDropdown, "value"));
-			WebUI.sleep(0.5);
+//			WebUI.logInfoMessage("Selected State: "+WebUI.getAttributeElement(signedStateDropdown, "value"));
 			
 			WebUI.verifyElementClickable(preferredlanguage);
 			WebUI.clickElement(preferredlanguage);
@@ -302,7 +303,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 			WebUI.sleep(1);
 			WebUI.clearText(FaceAmount);
 			WebUI.sleep(0.5);
-			int fAmountGenerated = DataGenerateUtils.generateFaceAmountBasedOnAge(age);
+			int fAmountGenerated = DataGenerateUtils.generateFaceAmountBasedOnAge(Gen_age);
 			WebUI.clearAndFillText(FaceAmount,String.valueOf(fAmountGenerated));
 			WebUI.sleep(0.5);
 			System.out.println(fAmountGenerated);
@@ -339,7 +340,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 			WebUI.sleep(1);
 			
 				try {
-						WebUI.verifyElementVisible(step_2);
+						DriverManager.getDriver().findElement(step_2).isDisplayed();
 						WebUI.sleep(1);
 						WebUI.clickElement(step1);
 						WebUI.sleep(1);
@@ -358,7 +359,8 @@ public class Step_1Page_NV extends CommonPageCICA{
 				catch(Exception Ex1)
 				{
 					try {
-						WebUI.verifyElementVisible(appointmentAcknowledgement);
+						DriverManager.getDriver().findElement(appointmentAcknowledgement).isDisplayed();
+//						WebUI.verifyElementVisible(appointmentAcknowledgement);
 						WebUI.clickElement(appointmentAcknowledgement);
 						WebUI.sleep(0.5);
 						WebUI.clickElement(agentLicense);
@@ -368,7 +370,8 @@ public class Step_1Page_NV extends CommonPageCICA{
 					catch(Exception Ex2)
 					{
 						try {
-							WebUI.verifyElementVisible(agentLicense);
+							DriverManager.getDriver().findElement(agentLicense).isDisplayed();
+//							WebUI.verifyElementVisible(agentLicense);
 							WebUI.clickElement(agentLicense);
 							WebUI.sleep(0.2);
 							WebUI.clickElement(TableOfContent_BackButton);

@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.codetru.driver.DriverManager;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
 
@@ -23,7 +24,7 @@ public class Step_7PageHIPAA_NV extends CommonPageCICA{
 	private By consentSection = By.xpath("//h3[.='Authorization/Consent']");
 	private By signature_pad1 = By.xpath("(//canvas[@class='signature-pad-canvas hidden-xs-down'])[1]");
 	private By Padding_Right1 = By.xpath("(//ion-col[@style='padding-right: 20px;']/ion-button)[1]");
-	
+	private By processing_Popup = By.xpath("//h2[contains(text(), 'Please stay on this page as we process this request.')]");
 
 	public void HIPAA_Voice_Authorization() throws Exception {
 		
@@ -61,8 +62,21 @@ public class Step_7PageHIPAA_NV extends CommonPageCICA{
 		WebUI.sleep(1);
 		WebUI.moveToElement(nextStepHIPAA);
 		WebUI.clickElement(nextStepHIPAA);
+		
+		try {
+			while(DriverManager.getDriver().findElement(processing_Popup).isDisplayed())
+			{
+				continue;
+			}
+			
+		} catch(Exception ex)
+		{
+			System.out.println("");
+		}
+
+		
 		WebUI.waitForPageLoaded();
-		WebUI.sleep(2);
+		WebUI.sleep(1);
 	}
 
 

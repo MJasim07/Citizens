@@ -36,7 +36,8 @@ public class MasterTest extends BaseTest {
 			WebUI.switchToMainWindow();
 //			getHomePage().logout();
 //			getLoginPage().login_WithoutPageLoading(USERID, PASSWORD);
-			WebUI.logInfoMessage("********** Login ID: " +USERID+ " for State: "+stateList.get(i) +" **********"  );
+			WebUI.logInfoMessage("********** Login ID: " +USERID+ " for State: "+stateList.get(i) +" **********");
+			WebUI.logInfoMessage("********** Selected State Number: "+(i+1) +" **********");
 			getHomePage().HomePageNewApplication();
 			getStep_1Page_NV().Product_Information(stateList.get(i));
 			getStep_2Page_NV().Proposed_Insured_Information();
