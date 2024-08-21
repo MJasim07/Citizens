@@ -35,6 +35,7 @@ public class Step_3Page_NV extends CommonPageCICA {
 		String Mandatory_Error = "Please enter a value.";
 		
 		WebUI.sleep(1);
+		WebUI.moveToElement(TableOfContent);
 		WebUI.clickElement(TableOfContent);
 		WebUI.sleep(1);
 		WebUI.clickElementWithJs(step_1);

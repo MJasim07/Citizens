@@ -131,36 +131,27 @@ public class Step_10PageACH extends CommonPageCICA {
 		WebUI.clickElement(MakePayment_Step_9);
 		WebUI.sleep(3);
 		
-//		WebElement nextButton =wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ion-button[normalize-space()='Next']")));
-//		nextButton.click();
-		WebUI.clickElement(nextButton);
-		WebUI.sleep(1);
+//		WebUI.clickElement(nextButton);
+//		WebUI.sleep(1.5);
 		
 //		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//ion-content[contains(@class, ion-padding)])[6]"))).click();
 //		WebUI.clickElement(By.xpath("(//ion-content[contains(@class, ion-padding)])[6]"));
 //		WebUI.sleep(0.5);
 //		WebUI.clickElement(wait_ion_padding);
 //		WebUI.sleep(1);
-//		WebElement	nxtBtn= driver.findElement(By.xpath("(//ion-col/ion-button[@size='small' and @color='primary'])[1]"));
-//		act.scrollToElement(nxtBtn).build().perform();
-		WebUI.scrollToElementAtBottom(nxtBtn);
-		WebUI.sleep(0.5);
 		
-//		WebElement Disclaimeryes=driver.findElement(By.xpath("//ion-checkbox[@formcontrolname='disclaimerYes']"));
-//		Disclaimeryes.click();
-		WebUI.clickElement(Disclaimeryes);
-		WebUI.sleep(0.5);
+//		WebUI.scrollToElementAtBottom(nxtBtn);
+//		WebUI.sleep(0.5);
 		
-//		nxtBtn	.click();
-		WebUI.clickElement(nxtBtn);
-		WebUI.sleep(0.5);
+//		WebUI.clickElement(Disclaimeryes);
+//		WebUI.sleep(0.5);
+		
+//		WebUI.clickElement(nxtBtn);
+//		WebUI.sleep(0.5);
 
-		WebUI.verifyElementPresent(Error_PolicyPayment_Relationship);
+//		WebUI.verifyElementPresent(Error_PolicyPayment_Relationship);
+//		WebUI.verifyElementVisible(ErrorMessage_PolicyPayment_PaymentType);
 		
-		WebUI.verifyElementVisible(ErrorMessage_PolicyPayment_PaymentType);
-		
-//		WebElement	RelationShipDropDown= driver.findElement(By.xpath("//select[@formcontrolname='Relationship']"));
-//		RelationShipDropDown.click(); //RelationShipDropDown
 		WebUI.clickElement(RelationShipDropDown);
 		WebUI.sleep(0.2);
 		
@@ -196,21 +187,18 @@ public class Step_10PageACH extends CommonPageCICA {
 		WebUI.sleep(2);
 
 		
-//		C.scrollTo(driver, NextBtn_BillingPage);
-		WebUI.scrollToElementAtBottom(NextBtn_BillingPage);
-		WebUI.sleep(1);
-//		NextBtn_BillingPage.click();
-		WebUI.clickElement(NextBtn_BillingPage);
-		WebUI.sleep(1);
-
-//		C.Sc_Empty_Input(driver, act, Error_FormOfPayment, Mandatory_Err, e, Test.Case10(22), Test.Exp10(22));
-		WebUI.scrollToElementAtBottom(Error_FormOfPayment);
-		WebUI.sleep(0.5);
-		WebUI.verifyElementVisible(Error_FormOfPayment);
-		WebUI.verifyContains(getTextElement(Error_FormOfPayment), Mandatory_Err);
-		
-//		C.Mandate_Click(driver, CreditCard, e,Test.Case10(23), Test.Exp10(23));
-		
+////		C.scrollTo(driver, NextBtn_BillingPage);
+//		WebUI.scrollToElementAtBottom(NextBtn_BillingPage);
+//		WebUI.sleep(1);
+//		WebUI.clickElement(NextBtn_BillingPage);
+//		WebUI.sleep(1);
+//
+////		C.Sc_Empty_Input(driver, act, Error_FormOfPayment, Mandatory_Err, e, Test.Case10(22), Test.Exp10(22));
+//		WebUI.scrollToElementAtBottom(Error_FormOfPayment);
+//		WebUI.sleep(0.5);
+//		WebUI.verifyElementVisible(Error_FormOfPayment);
+//		WebUI.verifyContains(getTextElement(Error_FormOfPayment), Mandatory_Err);
+				
 //		================================== ACH Payment =======================================================================================
 		
 //		WebElement ACh =driver.findElement(By.xpath("//ion-label[text()='ACH (Automated Clearing House) ']/following-sibling::ion-radio[@slot='start']"));

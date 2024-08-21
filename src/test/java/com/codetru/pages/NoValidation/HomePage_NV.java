@@ -3,6 +3,7 @@ package com.codetru.pages.NoValidation;
 import static com.codetru.keywords.WebUI.*;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -84,90 +85,33 @@ public class HomePage_NV extends CommonPageCICA {
 	private String cannotEditApplication_Message = "Submitted Applications Cannot Be Edited";
 	private String alert_DeleteApplication_Message = "Are you sure you want to delete this application?";
 	
-	public static List<String> licenseStateTexts;
-	public static List<String> appointmentStatusTexts;
 	
+    // Define ThreadLocal variables for the lists
+    private static ThreadLocal<List<String>> threadLocalLicenseStateTexts = ThreadLocal.withInitial(ArrayList::new);
+    private static ThreadLocal<List<String>> threadLocalAppointmentStatusTexts = ThreadLocal.withInitial(ArrayList::new);
+    
 	public void Open_Application_Module() throws Exception {
 		
 		WebUI.waitForPageLoaded();
 		sleep(5);
 		
 //++++++++++++++++++++++++++++++++++Get License State and Appointment Status List from Lic & Apnt Tab++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-///*			
-		WebUI.clickElement(profile_Icon);
-		WebUI.sleep(1);
-		WebUI.clickElement(licenses_Appointments_Tab);
-		WebUI.sleep(0.5);
-		
-		try {
-			while(DriverManager.getDriver().findElement(Licenses_Appointment_Data_Popup).isDisplayed())
-			{
-				continue;
-			}
-			
-		} catch(Exception ex)
-		{
-			System.out.println("");
-		}
 
-		
-		WebUI.waitForElementPresent(first_row_first_column);
-		WebUI.clickElement(first_row_first_column);
-		WebUI.sleep(2);
-		licenseStateTexts = WebUI.getElementTextsInList(lic_States);
-//		appointmentStatusTexts = WebUI.getElementTextsInList(appointment_Status);
-		appointmentStatusTexts = WebUI.getElementTextsInListAndDeleteCorrespondingFromOtherList(appointment_Status, licenseStateTexts);
-		
-        // Print the list size from both columns
-        System.out.println("License State texts count: " + licenseStateTexts.size());
-        System.out.println("Appointment Status texts count: " + appointmentStatusTexts.size());
-        
-        // Remove elements containing a specific String in List1 and the corresponding value from List2
-        WebUI.removeElementsContainingAndCorresponding(licenseStateTexts, "FL", appointmentStatusTexts);
-        
-        // Remove elements containing a specific String in List1 and the corresponding value from List2. -> Removing "Unrequested" from the list
-        WebUI.removeElementsContainingAndCorresponding(appointmentStatusTexts, "Unrequested",licenseStateTexts);
-        
-        // Remove elements containing a specific String in List1 and the corresponding value from List2. -> Removing "Unrequested" from the list
-        WebUI.removeElementsContainingAndCorresponding(appointmentStatusTexts, "Inactive/Cancelled",licenseStateTexts);
-        
-        // Remove elements containing null or "" String in List1 and the corresponding value from List2. -> Removing "" from the list
-//        WebUI.removeElementsContainingAndCorresponding(appointmentStatusTexts, "" ,licenseStateTexts);
-        
-        // Remove duplicate elements from both lists
-        WebUI.removeDuplicatesAndCorresponding(licenseStateTexts, appointmentStatusTexts);
-        
-        // Print the list size from both columns
-        System.out.println("License State texts count: " + licenseStateTexts.size());
-        System.out.println("Appointment Status texts count: " + appointmentStatusTexts.size());
-        // Print the texts from both columns
-        System.out.println("License State texts: " + licenseStateTexts);
-        System.out.println("Appointment Status texts: " + appointmentStatusTexts);
-        
-        WebUI.logInfoMessage("License States: " + licenseStateTexts);
-        WebUI.logInfoMessage("Appointment Status: " + appointmentStatusTexts);
-        WebUI.logInfoMessage("License State texts count: " + licenseStateTexts.size());
-        WebUI.logInfoMessage("Appointment Status texts count: " + appointmentStatusTexts.size());
-        
-        WebUI.clickElement(agentID_Popup_CloseButton);
-        
-//*/		
-		
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		getLicenseStateList();
 
 //================================= List Page Validation ===========================================================================
-		
-//		WebUI.verifyElementPresent(application_btn);	
-//		WebUI.moveToElement(application_btn);			
-//		WebUI.sleep(0.2);								
-//		WebUI.verifyElementPresent(list_application1);	
-//		WebUI.verifyElementPresent(new_application1);	
-//		WebUI.releaseElement(application_btn);			
-//		WebUI.sleep(0.2);								
-//		WebUI.clickElement(application_btn);			
-//		WebUI.clickElement(list_application1);			
-//		WebUI.sleep(3);
-/*			
+/*		
+		WebUI.verifyElementPresent(application_btn);	
+		WebUI.moveToElement(application_btn);			
+		WebUI.sleep(0.2);								
+		WebUI.verifyElementPresent(list_application1);	
+		WebUI.verifyElementPresent(new_application1);	
+		WebUI.releaseElement(application_btn);			
+		WebUI.sleep(0.2);								
+		WebUI.clickElement(application_btn);			
+		WebUI.clickElement(list_application1);			
+		WebUI.sleep(3);
+			
 		List<String> columnNames_Actual = WebUI.getElementTextsInList(list_ColumnNames);	//
 		
 		WebUI.verifyListContains(columnNames_Expected, columnNames_Actual);	//
@@ -362,6 +306,57 @@ public class HomePage_NV extends CommonPageCICA {
 
 	}
 	
+	public List<String> getLicenseStateList() {
+		
+        List<String> licenseStateTexts;
+        List<String> appointmentStatusTexts;
+
+        WebUI.clickElement(profile_Icon);
+        WebUI.sleep(1);
+        WebUI.clickElement(licenses_Appointments_Tab);
+        WebUI.sleep(0.5);
+
+        try {
+            while (DriverManager.getDriver().findElement(Licenses_Appointment_Data_Popup).isDisplayed()) {
+                continue;
+            }
+        } catch (Exception ex) {
+            System.out.println("");
+        }
+
+        WebUI.waitForElementPresent(first_row_first_column);
+        WebUI.clickElement(first_row_first_column);
+        WebUI.sleep(2);
+
+        licenseStateTexts = WebUI.getElementTextsInList(lic_States);
+        appointmentStatusTexts = WebUI.getElementTextsInListAndDeleteCorrespondingFromOtherList(appointment_Status, licenseStateTexts);
+        
+        WebUI.removeElementsContainingAndCorresponding(licenseStateTexts, "FL", appointmentStatusTexts);
+        WebUI.removeElementsContainingAndCorresponding(appointmentStatusTexts, "Unrequested", licenseStateTexts);
+        WebUI.removeElementsContainingAndCorresponding(appointmentStatusTexts, "Inactive/Cancelled", licenseStateTexts);
+        WebUI.removeDuplicatesAndCorresponding(licenseStateTexts, appointmentStatusTexts);
+
+        // Store the lists in the ThreadLocalManager
+        ThreadLocalManager.setLicenseStateList(licenseStateTexts);
+        ThreadLocalManager.setAppointmentStatusList(appointmentStatusTexts);
+        
+        // Print the list size from both columns
+        System.out.println("License State texts count: " + licenseStateTexts.size());
+        System.out.println("Appointment Status texts count: " + appointmentStatusTexts.size());
+        // Print the texts from both columns
+        System.out.println("License State texts: " + licenseStateTexts);
+        System.out.println("Appointment Status texts: " + appointmentStatusTexts);
+        
+        WebUI.logInfoMessage("License States: " + licenseStateTexts);
+        WebUI.logInfoMessage("Appointment Status: " + appointmentStatusTexts);
+        WebUI.logInfoMessage("License State texts count: " + licenseStateTexts.size());
+        WebUI.logInfoMessage("Appointment Status texts count: " + appointmentStatusTexts.size());
+        
+        WebUI.clickElement(agentID_Popup_CloseButton);
+
+        return licenseStateTexts;
+    }
+	
 	public void HomePageNewApplication()
 	{
 		sleep(3);
@@ -380,7 +375,8 @@ public class HomePage_NV extends CommonPageCICA {
 		WebUI.sleep(3);
 	}
 	 
-	}
+	
+}
 
 
 

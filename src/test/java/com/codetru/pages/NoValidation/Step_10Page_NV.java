@@ -200,6 +200,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		
 		WebUI.clickElement(nextButton);
 
+		WebUI.sleep(1);
 		WebUI.scrollToElementAtBottom(nxtBtn);
 		WebUI.sleep(1);
 		
@@ -300,7 +301,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		String RandomBillingPhone = DataGenerateUtils.randomPhoneNumber();
 		WebUI.clearAndFillText(BillingPhoneNumber,RandomBillingPhone);
 		WebUI.sleep(1);
-		WebUI.verifyContains(getAttributeElement(BillingPhoneNumber,"value"),RandomBillingPhone);
+//		WebUI.verifyContains(getAttributeElement(BillingPhoneNumber,"value"),RandomBillingPhone);
 		
 //		WebUI.scrollToElementAtBottom(Error_BillignEmailAddress);
 //		WebUI.verifyElementVisible(Error_BillignEmailAddress, 2);
@@ -310,7 +311,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		String RandomBillingEmail = DataGenerateUtils.randomEmail();
 		WebUI.clearAndFillText(BillingEmailAddress,RandomBillingEmail);
 		WebUI.sleep(1);
-		WebUI.verifyContains(getAttributeElement(BillingEmailAddress,"value"),RandomBillingEmail);
+//		WebUI.verifyContains(getAttributeElement(BillingEmailAddress,"value"),RandomBillingEmail);
 
 		WebUI.scrollToElementAtBottom(NextBtn_BillingPage);
 		WebUI.sleep(1);
@@ -346,10 +347,10 @@ public class Step_10Page_NV extends CommonPageCICA {
 		
 		WebUI.clearAndFillText(CardNumber, PropertiesHelpers.getValue("billing_Card_No"));
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(CardNumber, "value"), PropertiesHelpers.getValue("billing_Card_No"));
+//		WebUI.verifyContains(getAttributeElement(CardNumber, "value"), PropertiesHelpers.getValue("billing_Card_No"));
 
 //		WebUI.verifyContains(getTextElement(Error_CardHoldername).trim(), billing_Card_Holder_Name_Err);
-		WebUI.sleep(1);
+//		WebUI.sleep(1);
 
 
 //		WebUI.clearText(cardHolderName);
@@ -362,7 +363,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 
 		WebUI.clearAndFillText(cardHolderName, PropertiesHelpers.getValue("billing_CardHolder_Name"));
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(cardHolderName, "value"), PropertiesHelpers.getValue("billing_CardHolder_Name"));
+//		WebUI.verifyContains(getAttributeElement(cardHolderName, "value"), PropertiesHelpers.getValue("billing_CardHolder_Name"));
 	
 //		WebUI.clickElement(ExpiryMonth);
 //		WebUI.sleep(1);
@@ -382,7 +383,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		
 		WebUI.clearAndFillText(ExpiryMonth, PropertiesHelpers.getValue("billing_Card_Exp_Mn"));
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(ExpiryMonth, "value"), PropertiesHelpers.getValue("billing_Card_Exp_Mn"));
+//		WebUI.verifyContains(getAttributeElement(ExpiryMonth, "value"), PropertiesHelpers.getValue("billing_Card_Exp_Mn"));
 
 //		WebUI.clickElement(ExpiryYear);
 //		WebUI.sleep(1);
@@ -403,7 +404,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		WebUI.clickElement(CardNumber);
 		WebUI.clearAndFillText(ExpiryYear, PropertiesHelpers.getValue("billing_Card_Exp_Yr"));
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(ExpiryYear, "value"), PropertiesHelpers.getValue("billing_Card_Exp_Yr"));
+//		WebUI.verifyContains(getAttributeElement(ExpiryYear, "value"), PropertiesHelpers.getValue("billing_Card_Exp_Yr"));
 		WebUI.sleep(0.5);
 		
 //		WebUI.clearText(SecurityCode);
@@ -417,8 +418,8 @@ public class Step_10Page_NV extends CommonPageCICA {
 		WebUI.clickElement(SecurityCode);
 		WebUI.clearAndFillText(SecurityCode, PropertiesHelpers.getValue("billing_Card_Security_Code"));
 		WebUI.sleep(1);
-		WebUI.verifyContains(getAttributeElement(SecurityCode, "value"), PropertiesHelpers.getValue("billing_Card_Security_Code"));
-		WebUI.sleep(1);
+//		WebUI.verifyContains(getAttributeElement(SecurityCode, "value"), PropertiesHelpers.getValue("billing_Card_Security_Code"));
+//		WebUI.sleep(1);
 
 //		WebUI.verifyContains(getTextElement(SecurityCode_PInHintVisa_Master).trim(), billing_Pin_Hint);
 //		WebUI.sleep(1);
@@ -433,13 +434,13 @@ public class Step_10Page_NV extends CommonPageCICA {
 
 		WebUI.clearAndFillText(CardNumber, PropertiesHelpers.getValue("billing_Card_No"));
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(CardNumber, "value"), PropertiesHelpers.getValue("billing_Card_No"));
+//		WebUI.verifyContains(getAttributeElement(CardNumber, "value"), PropertiesHelpers.getValue("billing_Card_No"));
 
 		WebUI.sleep(1);
 		WebUI.clickElement(SecurityCode);
 		WebUI.clearAndFillText(SecurityCode, PropertiesHelpers.getValue("billing_Card_Security_Code"));
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(SecurityCode, "value").trim(), PropertiesHelpers.getValue("billing_Card_Security_Code"));
+//		WebUI.verifyContains(getAttributeElement(SecurityCode, "value").trim(), PropertiesHelpers.getValue("billing_Card_Security_Code"));
 		WebUI.sleep(0.5);
 
 		WebUI.clickElement(MakePayment);

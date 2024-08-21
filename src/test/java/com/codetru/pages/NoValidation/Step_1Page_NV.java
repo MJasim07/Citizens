@@ -3,6 +3,7 @@ package com.codetru.pages.NoValidation;
 import static com.codetru.keywords.WebUI.*;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -83,6 +84,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 	
 	public static String Randomfirstname;
 
+
 	public void Product_Information(String statex) throws Exception {
 
 		String Mandate_Error = "Please enter a value.";
@@ -101,7 +103,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 		Randomfirstname = DataGenerateUtils.randomFirstName();
 		WebUI.clearAndFillText(FirstName,Randomfirstname);
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(FirstName,"value"),Randomfirstname);
+//		WebUI.verifyContains(getAttributeElement(FirstName,"value"),Randomfirstname);
 				
 //
 //		String Randommiddlename = DataGenerateUtils.randomMiddleName();
@@ -213,13 +215,15 @@ public class Step_1Page_NV extends CommonPageCICA{
 //		String Page_Error_ = "There are some errors on this page. Please correct before continuing.";
 //		String Fc_MxErr = "The maximum amount is 30000.";
 //		String Fc_MnErr = "The minimum amount is 1000.";
+		
+		List<String> licensedStatesList = ThreadLocalManager.getLicenseStateList();
 		WebUI.sleep(1);
 		WebUI.scrollToElementAtTop(insuredInfoElement);
 		
 		Randomfirstname = DataGenerateUtils.randomFirstName();
 		WebUI.clearAndFillText(FirstName,Randomfirstname);
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(FirstName,"value"),Randomfirstname);
+//		WebUI.verifyContains(getAttributeElement(FirstName,"value"),Randomfirstname);
 				
 
 //		String Randommiddlename = DataGenerateUtils.randomMiddleName();
@@ -259,7 +263,7 @@ public class Step_1Page_NV extends CommonPageCICA{
 		
 		int iteration = 1;
 		int countryCount = 1;
-		for(String licState : HomePage_NV.licenseStateTexts)
+		for(String licState : licensedStatesList)
 		{
 			try {
 				

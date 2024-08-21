@@ -11,6 +11,7 @@ import com.codetru.driver.DriverManager;
 import com.codetru.helpers.ExcelHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.pages.NoValidation.HomePage_NV;
+import com.codetru.pages.NoValidation.ThreadLocalManager;
 import com.codetru.project.cica.CommonPageCICA;
 import com.codetru.project.cica.pages.HomePage;
 import com.codetru.project.cica.testcases.HomePageTest;
@@ -24,11 +25,12 @@ public class MasterTest extends BaseTest {
 
 		ExcelHelpers excel = new ExcelHelpers();
 		excel.setExcelFile(FrameworkConstants.EXCEL_CMS_LOGIN, "Login");
+		List<String> licensedStatesList = ThreadLocalManager.getLicenseStateList();
 
-		List<String> stateList = HomePage_NV.licenseStateTexts;
+//		List<String> stateList = HomePage_NV.licenseStateTexts;
 
 		
-		for (int i = 1; i < stateList.size(); i++) {
+		for (int i = 1; i < licensedStatesList.size(); i++) {
 //        getLoginPageCMS().loginSuccessWithCustomerAccount(excel.getCellData(4, "email"), excel.getCellData(4, "password"));
 //        getLoginPage().loginSuccessWithCustomerAccount(USERID, PASSWORD);
 //        getHomePage().Open_Application_Module();
@@ -36,10 +38,10 @@ public class MasterTest extends BaseTest {
 			WebUI.switchToMainWindow();
 //			getHomePage().logout();
 //			getLoginPage().login_WithoutPageLoading(USERID, PASSWORD);
-			WebUI.logInfoMessage("********** Login ID: " +USERID+ " for State: "+stateList.get(i) +" **********");
+			WebUI.logInfoMessage("********** Login ID: " +USERID+ " for State: "+licensedStatesList.get(i) +" **********");
 			WebUI.logInfoMessage("********** Selected State Number: "+(i+1) +" **********");
-			getHomePage().HomePageNewApplication();
-			getStep_1Page_NV().Product_Information(stateList.get(i));
+			getHomePage_NV().HomePageNewApplication();
+			getStep_1Page_NV().Product_Information(licensedStatesList.get(i));
 			getStep_2Page_NV().Proposed_Insured_Information();
 			getStep_3Page_NV().Policy_Owner_Information();
 			getStep_4Page_NV().Beneficiary_Information();
