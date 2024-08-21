@@ -8,15 +8,15 @@
     <artifactId>Framework-selenium-java</artifactId>
     <version>2.2.3</version>
     <name>AutomationFrameworkSelenium</name>
-    <url>https://github.com/fasiash/Codettru_CitizensAgent.git</url>
-    <description>Test Automation Framework Selenium Java with TestNG building by Fasiuddin</description>
+    <url>https://github.com/MJasim07/Citizens.git</url>
+    <description>Test Automation Framework Selenium Java with TestNG building by Mohammad Jasim</description>
 
     <developers>
         <developer>
-            <name>MOhd Fasiuddin</name>
-            <email>fasiuddin@codetru.com</email>
+            <name>Mohammad Jasim</name>
+            <email>jasim.m@codetru.com</email>
             <organization>https://codetru.com</organization>
-            <organizationUrl>https://github.com/fasiash</organizationUrl>
+            <organizationUrl>https://github.com/MJasim07</organizationUrl>
         </developer>
     </developers>
 

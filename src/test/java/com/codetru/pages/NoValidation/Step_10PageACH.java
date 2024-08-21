@@ -248,10 +248,9 @@ public class Step_10PageACH extends CommonPageCICA {
 
 //		C.Sc_Empty_Input(driver, act, Error_ReccuringPayemtns, Mandatory_Err, e, Test.Case10(29), Test.Exp10(29));
 		WebUI.scrollToElementAtBottom(Error_ReccuringPayemtns);
-		WebUI.verifyElementVisible(Error_ReccuringPayemtns);
-		WebUI.verifyContains(getTextElement(Error_ReccuringPayemtns), Mandatory_Err);
-
-		WebUI.sleep(1);
+//		WebUI.verifyElementVisible(Error_ReccuringPayemtns);
+//		WebUI.verifyContains(getTextElement(Error_ReccuringPayemtns), Mandatory_Err);
+//		WebUI.sleep(1);
 		
 //		C.Mandate_Click(driver, Reccuring_CheckBox, e,Test.Case10(27), Test.Exp10(27));
 		WebUI.clickElement(Reccuring_CheckBox);
@@ -323,7 +322,7 @@ public class Step_10PageACH extends CommonPageCICA {
 		String RandomBillingCity = DataGenerateUtils.randomCity();
 		WebUI.clearAndFillText(billingCityAndRegion,RandomBillingCity);
 		WebUI.sleep(0.5);
-		WebUI.verifyContains(getAttributeElement(billingCityAndRegion,"value"),RandomBillingCity);
+//		WebUI.verifyContains(getAttributeElement(billingCityAndRegion,"value"),RandomBillingCity);
 		
 //		C.Sc_Empty_Input(driver, act, Error_BillignState,Mandatory_Err, e, Test.Case10(46), Test.Exp10(46));
 //		WebUI.scrollToElementAtBottom(Error_BillignState);

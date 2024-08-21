@@ -1,18 +1,14 @@
 package com.codetru.pages.NoValidation;
 
-import static com.codetru.keywords.WebUI.*;
+import static com.codetru.keywords.WebUI.clickElement;
+import static com.codetru.keywords.WebUI.sleep;
+import static com.codetru.keywords.WebUI.verifyElementVisible;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.codetru.driver.DriverManager;
 import com.codetru.keywords.WebUI;
@@ -324,6 +320,7 @@ public class HomePage_NV extends CommonPageCICA {
             System.out.println("");
         }
 
+        System.out.println("Get the state list");
         WebUI.waitForElementPresent(first_row_first_column);
         WebUI.clickElement(first_row_first_column);
         WebUI.sleep(2);
