@@ -26,8 +26,8 @@
         <java-compiler.version>17</java-compiler.version>
         <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-        <selenium.version>4.20.0</selenium.version>
-        <testng.version>7.7.1</testng.version>
+        <selenium.version>4.23.0</selenium.version>
+        <testng.version>7.9.0</testng.version>
         <webdrivermanager.version>5.8.0</webdrivermanager.version>
         <aspectjweaver.version>1.9.22</aspectjweaver.version>
         <ashot.version>1.5.4</ashot.version>

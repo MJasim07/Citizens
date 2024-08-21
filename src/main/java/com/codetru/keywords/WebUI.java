@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Anh Tester
+ * Copyright (c) 2022
  * Automation Framework Selenium
  */
 
@@ -54,8 +54,8 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v123.network.Network;
-import org.openqa.selenium.devtools.v123.network.model.Headers;
+import org.openqa.selenium.devtools.v127.network.Network;
+import org.openqa.selenium.devtools.v127.network.model.Headers;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.print.PrintOptions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
