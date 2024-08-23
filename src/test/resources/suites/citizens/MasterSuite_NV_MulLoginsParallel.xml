@@ -1,0 +1,110 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Regression Tests CMS" parallel="tests" thread-count="4" verbose="1">
+
+	<listeners>
+		<listener class-name="com.codetru.listeners.AnnotationTransformer" />
+		
+		  
+	</listeners>
+
+	<test name="CITIZENS REGRESSION TEST WITH MULTIPLE STATES - 7250883">
+		<parameter name="BROWSER" value="chrome" />
+		<parameter name="USERID" value="7250883" />
+		<parameter name="PASSWORD" value="RockStar_K8" />
+	<!--	 <parameter name="statex" value="GA"/>-->
+		<classes>
+
+	<!--	<class name="com.codetru.project.cica.testcases.LoginTest" />    -->
+			<class name="com.codetru.project.cica.testcases.HomePageTest_NV" />
+			<class name="com.codetru.project.cica.testcases.Step1_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step2_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step3_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step4_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step5_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step6_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_TestHIPAA_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step8_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step9_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step10_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.MasterTest" />
+			
+		</classes>
+	</test>
+	
+		<test name="CITIZENS REGRESSION TEST WITH MULTIPLE STATES - 7251968">
+		<parameter name="BROWSER" value="edge" />
+		<parameter name="USERID" value="7251968" />
+		<parameter name="PASSWORD" value="RockStar_K8" />
+	<!--	 <parameter name="statex" value="GA"/>-->
+		<classes>
+
+	<!--	<class name="com.codetru.project.cica.testcases.LoginTest" />	-->
+			<class name="com.codetru.project.cica.testcases.HomePageTest_NV" />
+			<class name="com.codetru.project.cica.testcases.Step1_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step2_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step3_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step4_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step5_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step6_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_TestHIPAA_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step8_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step9_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step10_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.MasterTest" />
+			
+		</classes>
+	</test>
+	
+			<test name="CITIZENS REGRESSION TEST WITH MULTIPLE STATES - 7250139">
+		<parameter name="BROWSER" value="chrome" />
+		<parameter name="USERID" value="7250139" />
+		<parameter name="PASSWORD" value="RockStar_K8" />
+	<!--	 <parameter name="statex" value="GA"/>-->
+		<classes>
+
+	<!--	<class name="com.codetru.project.cica.testcases.LoginTest" />	-->
+			<class name="com.codetru.project.cica.testcases.HomePageTest_NV" />
+			<class name="com.codetru.project.cica.testcases.Step1_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step2_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step3_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step4_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step5_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step6_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_TestHIPAA_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step8_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step9_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step10_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.MasterTest" />
+			
+		</classes>
+	</test>
+	
+			<test name="CITIZENS REGRESSION TEST WITH MULTIPLE STATES - 7251969">
+		<parameter name="BROWSER" value="edge" />
+		<parameter name="USERID" value="7251969" />
+		<parameter name="PASSWORD" value="RockStar_K8" />
+	<!--	 <parameter name="statex" value="GA"/>-->
+		<classes>
+
+	<!--	<class name="com.codetru.project.cica.testcases.LoginTest" />	-->
+			<class name="com.codetru.project.cica.testcases.HomePageTest_NV" />
+			<class name="com.codetru.project.cica.testcases.Step1_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step2_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step3_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step4_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step5_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step6_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_TestHIPAA_NV" />
+			<class name="com.codetru.project.cica.testcases.Step7_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step8_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step9_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.Step10_Test_NV" />
+			<class name="com.codetru.project.cica.testcases.MasterTest" />
+			
+		</classes>
+	</test>
+	
+</suite>

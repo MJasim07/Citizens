@@ -28,6 +28,8 @@ public class Step_9Page extends CommonPageCICA {
 	private By Table_Of_Content = By.xpath("(//ion-col[@size='24' and@size-md='18' ]/ion-button[@class = 'md button button-solid ion-activatable ion-focusable hydrated'])[13]");
 	private By ListEdit_application1 = By.xpath("(//td/ion-button[@title='Edit Application'])[last()]");
 	
+	private By searchBox = By.xpath("(//input[@placeholder='Search' and @type='search'])[1]");
+	private By actions_EditApplicationButton = By.xpath("//tbody/tr/td[10]/ion-button[1]");
 	private By ListEditButton_application1 = By.xpath("//tbody/tr/td[10]/ion-button[1]");
 	private By hiddenCells = By.xpath("//tbody/tr/td[1]");
 	
@@ -52,85 +54,90 @@ public class Step_9Page extends CommonPageCICA {
     	try {
     	WebUI.waitForPageLoaded(2);
     	WebUI.clickElement(ApplicationModule1);
-		WebUI.sleep(2);
+		WebUI.sleep(1.5);
 		WebUI.clickElement(List_application1);
 		WebUI.sleep(2.5);
-    	System.out.println("From Step_9Page==================================: "+Step_1Page.Randomfirstname);	
-    	WebUI.clickCorrespondingElement(Step_1Page.Randomfirstname, hiddenCells, ListEditButton_application1);
+    	System.out.println("From Step_9Page==================================: "+Step_1Page.Randomfirstname);
+		WebUI.clearAndFillText(searchBox, Step_1Page.Randomfirstname);
+		WebUI.sleep(1);
+//    	WebUI.clickCorrespondingElement(Step_1Page.Randomfirstname, hiddenCells, ListEditButton_application1);
+		WebUI.clickElement(actions_EditApplicationButton);
     	WebUI.sleep(2);
 		WebUI.clickElement(Upload_Application);
 		WebUI.sleep(4);
 		
     	} catch(Exception ex)
     	{
-    		WebUI.clickElementWithJs(step_1);
-    		WebUI.sleep(1);
-    		try {
-    		WebUI.scrollToElementAtBottom(calculate);
-    		WebUI.clickElement(calculate);
-    		WebUI.sleep(0.2);
-    		}catch(Exception exe)
-    		{
-    			System.out.println("Calculate button is not present to recalculate. "+exe.getMessage());
-    		}
-    		WebUI.scrollToElementAtBottom(step_1_NextB);
-    		WebUI.moveToElement(step_1_NextB);
-    		WebUI.clickElement(step_1_NextB);
-    		WebUI.sleep(2.5);
+    		System.out.println(ex.getMessage());
     		
-    		WebUI.scrollToElementAtBottom(step_2_NextB);
-    		WebUI.sleep(0.5);
-    		WebUI.moveToElement(step_2_NextB);
-    		WebUI.clickElement(step_2_NextB);
-    		WebUI.sleep(3);
-    		
-    		WebUI.scrollToElementAtTop(step_3_OwnerSSN);
-    		WebUI.sleep(0.5);
-    		WebUI.scrollToElementAtBottom(step_3_NextB);
-    		WebUI.sleep(0.5);
-    		WebUI.moveToElement(step_3_NextB);
-    		WebUI.clickElement(step_3_NextB);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.scrollToElementAtBottom(step_4_NextB);
-    		WebUI.sleep(0.5);
-    		WebUI.moveToElement(step_4_NextB);
-    		WebUI.clickElement(step_4_NextB);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.scrollToElementAtBottom(step_5_NextB);
-    		WebUI.sleep(0.5);
-    		WebUI.moveToElement(step_5_NextB);
-    		WebUI.clickElement(step_5_NextB);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.scrollToElementAtBottom(step_6_NextB);
-    		WebUI.sleep(0.2);
-    		WebUI.moveToElement(step_6_NextB);
-    		WebUI.clickElement(step_6_NextB);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.scrollToElementAtBottom(nextStepHIPAA);
-    		WebUI.sleep(0.2);
-    		WebUI.moveToElement(nextStepHIPAA);
-    		WebUI.clickElement(nextStepHIPAA);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.scrollToElementAtBottom(step_7_NextB);
-    		WebUI.sleep(0.2);
-    		WebUI.moveToElement(step_7_NextB);
-    		WebUI.clickElement(step_7_NextB);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.scrollToElementAtBottom(step_8_NextB);
-    		WebUI.sleep(0.5);
-    		WebUI.moveToElement(step_8_NextB);
-    		WebUI.clickElement(step_8_NextB);
-    		WebUI.sleep(2.5);
-    		
-    		WebUI.sleep(1);
-    		WebUI.clickElement(Upload_Application);
-    		WebUI.sleep(4);
+//    		WebUI.clickElementWithJs(step_1);
+//    		WebUI.sleep(1);
+//    		try {
+//    		WebUI.scrollToElementAtBottom(calculate);
+//    		WebUI.clickElement(calculate);
+//    		WebUI.sleep(0.2);
+//    		}catch(Exception exe)
+//    		{
+//    			System.out.println("Calculate button is not present to recalculate. "+exe.getMessage());
+//    		}
+//    		WebUI.scrollToElementAtBottom(step_1_NextB);
+//    		WebUI.moveToElement(step_1_NextB);
+//    		WebUI.clickElement(step_1_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(step_2_NextB);
+//    		WebUI.sleep(0.5);
+//    		WebUI.moveToElement(step_2_NextB);
+//    		WebUI.clickElement(step_2_NextB);
+//    		WebUI.sleep(3);
+//    		
+//    		WebUI.scrollToElementAtTop(step_3_OwnerSSN);
+//    		WebUI.sleep(0.5);
+//    		WebUI.scrollToElementAtBottom(step_3_NextB);
+//    		WebUI.sleep(0.5);
+//    		WebUI.moveToElement(step_3_NextB);
+//    		WebUI.clickElement(step_3_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(step_4_NextB);
+//    		WebUI.sleep(0.5);
+//    		WebUI.moveToElement(step_4_NextB);
+//    		WebUI.clickElement(step_4_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(step_5_NextB);
+//    		WebUI.sleep(0.5);
+//    		WebUI.moveToElement(step_5_NextB);
+//    		WebUI.clickElement(step_5_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(step_6_NextB);
+//    		WebUI.sleep(0.2);
+//    		WebUI.moveToElement(step_6_NextB);
+//    		WebUI.clickElement(step_6_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(nextStepHIPAA);
+//    		WebUI.sleep(0.2);
+//    		WebUI.moveToElement(nextStepHIPAA);
+//    		WebUI.clickElement(nextStepHIPAA);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(step_7_NextB);
+//    		WebUI.sleep(0.2);
+//    		WebUI.moveToElement(step_7_NextB);
+//    		WebUI.clickElement(step_7_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.scrollToElementAtBottom(step_8_NextB);
+//    		WebUI.sleep(0.5);
+//    		WebUI.moveToElement(step_8_NextB);
+//    		WebUI.clickElement(step_8_NextB);
+//    		WebUI.sleep(2.5);
+//    		
+//    		WebUI.sleep(1);
+//    		WebUI.clickElement(Upload_Application);
+//    		WebUI.sleep(4);
 
     		
     	}

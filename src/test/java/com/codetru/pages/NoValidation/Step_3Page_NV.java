@@ -28,6 +28,7 @@ public class Step_3Page_NV extends CommonPageCICA {
 	private By step_2_NextB = By.xpath("//h3[.='Contact Information']/parent::div/following-sibling::ion-row/ion-col[@size='24' and @size-md='6']/ion-button");
 	private By TableOfContent = By.xpath("//h3[.='Policy Owner Information']/parent::div/following-sibling::ion-row[@style='padding-left: 50px;']/ion-col[@size-md='18']/ion-button[.='Table of Contents']");
 	private By impNotice_Popup = By.xpath("//ion-backdrop/following-sibling::div/div/following-sibling::div/button");
+	private By policyPayor_No = By.xpath("//h3[.='Policy Payor Information']/parent::div/descendant::ion-label[.='No']/following-sibling::ion-radio");
 
 	
 	public void Policy_Owner_Information() throws Exception {
@@ -35,46 +36,15 @@ public class Step_3Page_NV extends CommonPageCICA {
 		String Mandatory_Error = "Please enter a value.";
 		
 		WebUI.sleep(1);
-		WebUI.moveToElement(TableOfContent);
-		WebUI.clickElement(TableOfContent);
-		WebUI.sleep(1);
-		WebUI.clickElementWithJs(step_1);
-		WebUI.sleep(1);
-		//For Notice Popup
-		try {
-			DriverManager.getDriver().findElement(impNotice_Popup).isDisplayed();
-			WebUI.sleep(0.5);
-			WebUI.clickElement(impNotice_Popup);
-			
-		}catch(Exception ex)
-		{
-			System.out.println("Notice Popup Did Not Appear. "+ex.getMessage());
-		}
-
-		WebUI.scrollToElementAtBottom(calculate);
-		WebUI.clickElement(calculate);
-		WebUI.sleep(0.2);
-
-		WebUI.scrollToElementAtBottom(step_1_NextB);
-		WebUI.moveToElement(step_1_NextB);
-		WebUI.clickElement(step_1_NextB);
-		WebUI.sleep(2.5);
-		
-		WebUI.scrollToElementAtBottom(step_2_NextB);
-		WebUI.sleep(0.5);
-		WebUI.moveToElement(step_2_NextB);
-		WebUI.clickElement(step_2_NextB);
-		WebUI.sleep(3);
-		
-		//Step-3 starts
 		WebUI.clickElement(step3_No);
 		WebUI.sleep(0.5);
 
 		try {
 
 //			WebElement policyPayor_Yes = DriverManager.getDriver().findElement(By.xpath("//h3[.='Policy Payor Information']/parent::div/descendant::ion-label[.='Yes']/following-sibling::ion-radio"));
-			WebElement policyPayor_No = DriverManager.getDriver().findElement(By.xpath("//h3[.='Policy Payor Information']/parent::div/descendant::ion-label[.='No']/following-sibling::ion-radio"));
-			policyPayor_No.click();
+			DriverManager.getDriver().findElement(policyPayor_No).isDisplayed();
+			WebUI.sleep(0.2);
+			WebUI.clickElement(policyPayor_No);
 			WebUI.sleep(0.5);
 
 		} catch (Exception ex) {

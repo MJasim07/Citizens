@@ -18,6 +18,7 @@ import com.codetru.project.cica.testcases.HomePageTest;
 import com.codetru.project.cica.testcases.Step1_Test;
 
 public class MasterTest extends BaseTest {
+	
 
 	@Parameters({ "USERID", "PASSWORD" })
 	@Test
@@ -36,6 +37,7 @@ public class MasterTest extends BaseTest {
 //        getHomePage().Open_Application_Module();
 
 			WebUI.switchToMainWindow();
+			WebUI.sleep(0.5);
 //			getHomePage().logout();
 //			getLoginPage().login_WithoutPageLoading(USERID, PASSWORD);
 			WebUI.logInfoMessage("********** Login ID: " +USERID+ " for State: "+licensedStatesList.get(i) +" **********");
@@ -59,6 +61,7 @@ public class MasterTest extends BaseTest {
 			else
 			{
 				getStep_10Page_NV().Make_a_Payment();
+//				flag=1;
 			}
 
 		}

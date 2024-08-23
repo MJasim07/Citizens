@@ -8,6 +8,8 @@ public class ThreadLocalManager {
     // ThreadLocal variables to hold the lists
     private static ThreadLocal<List<String>> licenseStateList = ThreadLocal.withInitial(ArrayList::new);
     private static ThreadLocal<List<String>> appointmentStatusList = ThreadLocal.withInitial(ArrayList::new);
+    private static ThreadLocal<Integer> flag = ThreadLocal.withInitial(() -> 1);
+
 
     // Getters
     public static List<String> getLicenseStateList() {
@@ -31,5 +33,14 @@ public class ThreadLocalManager {
     public static void clear() {
         licenseStateList.remove();
         appointmentStatusList.remove();
+        flag.remove();
+    }
+    
+    public static void setFlag(int value) {
+        flag.set(value);
+    }
+
+    public static int getFlag() {
+        return flag.get();
     }
 }

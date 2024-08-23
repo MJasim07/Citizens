@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.codetru.driver.DriverManager;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
+import com.codetru.pages.NoValidation.ThreadLocalManager;
 import com.codetru.project.cica.CommonPageCICA;
 import com.codetru.utils.DataFakerUtils;
 import com.codetru.utils.DataGenerateUtils;
@@ -173,6 +174,7 @@ public class Step_1Page222 extends CommonPageCICA{
 		//DOB Validation Messages
 //		String age_Max_Error = "The maximum amount is 85.";
 		String age_Max_Error = "The maximum age is 85.";
+		List<String> licensedStatesList = ThreadLocalManager.getLicenseStateList();
 		
 ///*		
 
@@ -623,7 +625,7 @@ public class Step_1Page222 extends CommonPageCICA{
 */
 		int iteration = 1;
 		int tb_count = 1;
-		for(String licState : HomePage.licenseStateTexts)
+		for(String licState : licensedStatesList)
 		{
 			try {
 				

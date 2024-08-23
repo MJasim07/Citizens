@@ -307,10 +307,11 @@ public class HomePage_NV extends CommonPageCICA {
         List<String> licenseStateTexts;
         List<String> appointmentStatusTexts;
 
+        WebUI.sleep(0.5);
         WebUI.clickElement(profile_Icon);
         WebUI.sleep(1);
         WebUI.clickElement(licenses_Appointments_Tab);
-        WebUI.sleep(0.5);
+        WebUI.sleep(1);
 
         try {
             while (DriverManager.getDriver().findElement(Licenses_Appointment_Data_Popup).isDisplayed()) {
@@ -357,10 +358,13 @@ public class HomePage_NV extends CommonPageCICA {
 	public void HomePageNewApplication()
 	{
 		sleep(3);
-		clickElement(application_btn);
+//		clickElement(application_btn);
+		WebUI.moveToElement(application_btn);			
 		sleep(1);
 		clickElement(new_application1);
 		sleep(2);
+		WebUI.releaseElement(application_btn);
+		sleep(0.2);
 	}
 	
 	public void logout()

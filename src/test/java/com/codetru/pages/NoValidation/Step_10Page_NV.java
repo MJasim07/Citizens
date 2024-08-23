@@ -18,6 +18,7 @@ import com.codetru.driver.DriverManager;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.project.cica.testcases.MasterTest;
 import com.codetru.utils.DataGenerateUtils;
 
 public class Step_10Page_NV extends CommonPageCICA {
@@ -26,118 +27,63 @@ public class Step_10Page_NV extends CommonPageCICA {
 //	private By MakePayment_Step_9 = By.xpath("//span[text()='Step 11: Schedule a Payment']");
 	
 	private By nextButton = By.xpath("//ion-button[normalize-space()='Next']");
-	
 	private By wait_ion_padding = By.xpath("(//ion-content[contains(@class, ion-padding)])[6]");
-		
 	private By nextButton_PolicyPayment = By.xpath("//ion-button[normalize-space()='Next']");
-	
 	private By waitUntill = By.xpath("(//ion-content[contains(@class, ion-padding)])[6]");
-	
 	private By nxtBtn = By.xpath("(//ion-col/ion-button[@size='small' and @color='primary'])[1]");
-	
 	private By Disclaimeryes = By.xpath("//ion-checkbox[@formcontrolname='disclaimerYes']");
-	
 	private By Error_PolicyPayment_Relationship = By.xpath("//ion-label[.=' Relationship']/parent::ion-item/following-sibling::div[.=' Please enter a value. ']");
-	
 	private By ErrorMessage_PolicyPayment_PaymentType = By.xpath("(//ion-col[@size='24' and @size-md='8' and @class='md hydrated'])[5]");
-	
 	private By RelationShipDropDown = By.xpath("//select[@formcontrolname='Relationship']");
-	
 	private By RelationShip_Parent = By.xpath("//option[.='Parent ']");
-	
 	private By PaymentType = By.xpath("//select[@formcontrolname='PaymentType']");
-	
 	private By PaymentType_premium = By.xpath("//option[.='Premium']");
-	
 	private By NextBtn_BillingPage = By.xpath("//ion-button[@color='primary' and @size-md='8']");
-	
 	private By Error_FormOfPayment = By.xpath("(//h3[.='Payment Preferences']/following-sibling::ion-row/ion-col[@size='24'])[1]");
-	
 	private By CreditCard = By.xpath("(//ion-radio[@slot='start' and @aria-checked='false'])[1]");
-	
 	private By Error_ReccuringPayemtns = By.xpath("(//h3[.='Payment Preferences']/following-sibling::ion-row/ion-col[@size='24'])[2]");
-	
 	private By Reccuring_CheckBox = By.xpath("//ion-checkbox[@role='checkbox']");
-	
 	private By Error_BillignFirstName = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @size-md='12'])[1]");
-	
 	private By BillingFirstName = By.xpath("//ion-input[@formcontrolname='CardHolderFirstName']/input");
-	
 	private By Error_BillignLastName = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @size-md='12'])[2]");
-	
 	private By BillingLastName = By.xpath("//ion-input[@formcontrolname='CardHolderLastName']/input");
-	
 	private By billingZipCode = By.xpath("//ion-input[@formcontrolname='Zip']/input");
-	
 	private By Error_BillignStreetAddress = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[3]");
-	
 	private By billingStreetAddress = By.xpath("//ion-input[@formcontrolname='StreetAddress']/input");
-	
 	private By Error_BillignCityAndRegion = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[4]");
-	
 	private By billingCityAndRegion = By.xpath("//ion-input[@formcontrolname='City']/input");
-	
 	private By Error_BillignState = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[5]");
-	
 	private By billingState = By.xpath("//select[@formcontrolname='State']");
-	
 	private By StateSelection = By.xpath("//option[.=' Arkansas']");
-	
 	private By Error_BillignZipCode = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[6]");
-	
 	private By Error_BillignCountry = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[7]");
-	
 	private By billingCountry = By.xpath("//select[@formcontrolname='Country']");
-	
 	private By billingCountrySelection = By.xpath("//option[.=' COLOMBIA']");
-	
 	private By Error_BillignPhoneNumber = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[8]");
-	
 	private By BillingPhoneNumber = By.xpath("//ion-input[@formcontrolname='Phone']/input");
-	
 	private By Error_BillignEmailAddress = By.xpath("(//h3[.='Billing Information']/following-sibling::ion-row/ion-col[@size='24' and @class='md hydrated'])[9]");
-	
 	private By BillingEmailAddress = By.xpath("//ion-input[@formcontrolname='Email']/input");
-	
 	private By CardNumber = By.xpath("//input[@name='cardNumber']");
-	
 	private By cardHolderName = By.id("cardholderName");
-	
 	private By Error_CardNumber = By.id("cardNumber-hint");
-	
 	private By Error_CardHoldername = By.id("cardholderName-hint");
-	
 	private By ExpiryMonth = By.id("expiryMonth");
-	
 	private By Error_ExpiryMonth = By.id("expiryDate-hint");
-	
 	private By ExpiryYear = By.id("expiryYear");
-	
 	private By Error_ExpiryYear = By.id("expiryDate-hint");
-	
 	private By SecurityCode = By.id("securityCode");
-	
 	private By Error_SecurityCode = By.id("securityCode-hint");
-	
 	private By SecurityCode_PInHintVisa_Master = By.id("pin-helptxt");
-	
 	private By MakePayment = By.id("submitButton");
-	
 	private By mail_Id = By.xpath("//input[@id='ReceiptEmail']");
- 
 	private By send_btn = By.xpath("//input[@name='sendReceipt']");
- 
 	private By email_field = By.id("login");
- 
 	private By submit = By.id("refreshbut");
- 
 	private By email_from =By.xpath("(//span[contains(text(),'Citizensinc.com')])");
- 
 	private By reciept = By.xpath("//a[@title='Receipt.pdf']");
- 
 	private By email_inbox = By.xpath("(//span[contains(text(),'Citizensinc.com')])");
- 
 	private By open_file = By.xpath("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
+	private By recurring_DateSelect = By.xpath("//select[@formcontrolname='PaymentDay']");
  
 	//--------------------------------------------------------------------------------------------
 	//ACH Payment Method ---------NOT USING THIS PAYMENT METHOD
@@ -200,7 +146,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		
 		WebUI.clickElement(nextButton);
 
-		WebUI.sleep(1);
+		WebUI.sleep(1.5);
 		WebUI.scrollToElementAtBottom(nxtBtn);
 		WebUI.sleep(1);
 		
@@ -216,17 +162,29 @@ public class Step_10Page_NV extends CommonPageCICA {
 
 		WebUI.scrollToElementAtBottom(Error_FormOfPayment);
 		WebUI.verifyElementVisible(Error_FormOfPayment);
-//		WebUI.verifyContains(getTextElement(Error_FormOfPayment), Mandatory_Err);
 		
 		WebUI.clickElement(CreditCard);
 		WebUI.sleep(1);
 
 		WebUI.scrollToElementAtBottom(Error_ReccuringPayemtns);
 		WebUI.verifyElementVisible(Error_ReccuringPayemtns);
-//		WebUI.verifyContains(getTextElement(Error_ReccuringPayemtns), Mandatory_Err);
 		WebUI.sleep(1);
 		
-		WebUI.clickElement(Reccuring_CheckBox);
+		if(ThreadLocalManager.getFlag()==1)
+		{
+			WebUI.logInfoMessage("********** Credit Card Payment. No Recurring. **********");
+			WebUI.clickElement(Reccuring_CheckBox);
+			ThreadLocalManager.setFlag(2);
+		}
+		else
+		{
+			WebUI.logInfoMessage("********** Credit Card Payment with Recurring. **********");
+			WebUI.clickElement(recurring_DateSelect);
+			WebUI.sleep(0.5);
+			WebUI.selectOptionByValue(recurring_DateSelect, "1");
+			WebUI.sleep(0.5);
+			ThreadLocalManager.setFlag(1);
+		}
 
 		String RandomBillingFirstName = DataGenerateUtils.randomFirstName();
 		WebUI.clearAndFillText(BillingFirstName,RandomBillingFirstName);
@@ -457,7 +415,7 @@ public class Step_10Page_NV extends CommonPageCICA {
 		PolicyNumber = policyDetails.replaceAll("[^0-9]", "");
 		System.out.println("Policy Number: "+PolicyNumber);
 		WebUI.logInfoMessage("Policy Number: "+PolicyNumber);
-		
+		WebUI.sleep(1);
 		//-----------------------------------------
 
 /*

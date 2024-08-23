@@ -3,6 +3,8 @@ package com.codetru.project.cica.pages;
 
 import static com.codetru.keywords.WebUI.*;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
@@ -10,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.codetru.driver.DriverManager;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
+import com.codetru.pages.NoValidation.ThreadLocalManager;
 import com.codetru.project.cica.CommonPageCICA;
 import com.codetru.utils.DataFakerUtils;
 import com.codetru.utils.DataGenerateUtils;
@@ -162,6 +165,8 @@ public class Step_1Page extends CommonPageCICA{
 		//DOB Validation Messages
 //		String age_Max_Error = "The maximum amount is 85.";
 		String age_Max_Error = "The maximum age is 85.";
+		
+		List<String> licensedStatesList = ThreadLocalManager.getLicenseStateList();
 		
 ///*		
 
@@ -612,13 +617,15 @@ public class Step_1Page extends CommonPageCICA{
 */
 		int iteration = 1;
 		int countryCount = 1;
-		for(String licState : HomePage.licenseStateTexts)
+		for(String licState : licensedStatesList)
 		{
 			try {
 				
 			Select sel = new Select(WebUI.getWebElement(signedStateDropdown));
 			WebUI.sleep(1);
 			System.out.println("State ******************************************************: "+licState);
+			WebUI.logInfoMessage("********** Selected State: "+ licState +" **********");
+			WebUI.logInfoMessage("********** Selected State Number: "+ 1 +" **********");
 			
 			sel.selectByValue(licState);
 			WebUI.sleep(0.5);

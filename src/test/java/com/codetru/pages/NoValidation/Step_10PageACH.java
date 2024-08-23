@@ -18,6 +18,7 @@ import com.codetru.driver.DriverManager;
 import com.codetru.helpers.PropertiesHelpers;
 import com.codetru.keywords.WebUI;
 import com.codetru.project.cica.CommonPageCICA;
+import com.codetru.project.cica.testcases.MasterTest;
 import com.codetru.utils.DataGenerateUtils;
 
 public class Step_10PageACH extends CommonPageCICA {
@@ -83,9 +84,9 @@ public class Step_10PageACH extends CommonPageCICA {
 	private By reciept = By.xpath("//a[@title='Receipt.pdf']");
 	private By email_inbox = By.xpath("(//span[contains(text(),'Citizensinc.com')])");
 	private By open_file = By.xpath("return document.querySelector('downloads-manager').shadowRoot.querySelector('downloads-item').shadowRoot.querySelector('div>div>div>a')");
+	private By recurring_DateSelect = By.xpath("//select[@formcontrolname='PaymentDay']");
  
-	//--------------------------------------------------------------------------------------------
-	//ACH Payment Method ---------NOT USING THIS PAYMENT METHOD
+	//-----------------------------------------------------------------------------------------------
 	private By ACh = By.xpath("//ion-label[text()='ACH (Automated Clearing House) ']/following-sibling::ion-radio[@slot='start']");
 	private By Error_AccountType = By.xpath("(//ion-row[@class='md hydrated']/ion-col[@size='24' and @size-md='12' and @class='md hydrated'])[2]");
 	private By AccountType = By.xpath("//select[@formcontrolname='AccountType']");
@@ -100,6 +101,8 @@ public class Step_10PageACH extends CommonPageCICA {
 //	private By sendReceiptBtn = By.id("sendReceipt");
 //	private By loginID = By.id("login");
 //	private By refreshButton = By.id("refreshbut");
+	private By insuredPolicyNumber = By.xpath("//tbody/tr/td[1]");
+	public static String PolicyNumber;
 
 	public void Make_a_Payment() throws Exception {
 
@@ -171,7 +174,7 @@ public class Step_10PageACH extends CommonPageCICA {
 		
 //		nextButton.click();
 		WebUI.clickElement(nextButton);
-		WebUI.sleep(0.5);
+		WebUI.sleep(1);
 
 //		WebElement	nxtBtn1= driver.findElement(By.xpath("(//ion-col/ion-button[@size='small' and @color='primary'])[1]"));
 //		act.scrollToElement(nxtBtn1).build().perform();
@@ -182,7 +185,6 @@ public class Step_10PageACH extends CommonPageCICA {
 //		Disclaimeryes1.click();
 		WebUI.clickElement(Disclaimeryes);
 		WebUI.sleep(1);
-//		nxtBtn1.click();
 		WebUI.clickElement(nxtBtn);
 		WebUI.sleep(2);
 
@@ -253,7 +255,19 @@ public class Step_10PageACH extends CommonPageCICA {
 //		WebUI.sleep(1);
 		
 //		C.Mandate_Click(driver, Reccuring_CheckBox, e,Test.Case10(27), Test.Exp10(27));
-		WebUI.clickElement(Reccuring_CheckBox);
+		if(ThreadLocalManager.getFlag()==2)
+		{
+			WebUI.logInfoMessage("********** ACH Payment. No Recurring. **********");
+			WebUI.clickElement(Reccuring_CheckBox);			
+		}
+		else
+		{
+			WebUI.logInfoMessage("********** ACH Payment with Recurring. **********");
+			WebUI.clickElement(recurring_DateSelect);
+			WebUI.sleep(0.5);
+			WebUI.selectOptionByValue(recurring_DateSelect, "1");
+			WebUI.sleep(0.5);
+		}
 
 //		WebUI.scrollToElementAtBottom(Error_BillignFirstName);
 //		WebUI.verifyElementVisible(Error_BillignFirstName);
@@ -427,7 +441,16 @@ public class Step_10PageACH extends CommonPageCICA {
 		WebUI.sleep(1);
 		WebUI.clickElement(NextBtn_BillingPage);
 		WebUI.sleep(3);
-
+		
+		
+		
+//		String policyDetails = WebUI.getTextElement(insuredPolicyNumber);
+//		System.out.println("Policy Holder Name and Policy Number: "+policyDetails);
+//		PolicyNumber = policyDetails.replaceAll("[^0-9]", "");
+//		System.out.println("Policy Number: "+PolicyNumber);
+//		WebUI.logInfoMessage("Policy Number: "+PolicyNumber);
+//		WebUI.sleep(1);
+		
 //		C.Frames(driver, e,Test.Case10(130), Test.Exp10(130));
 //		WebUI.sleep(2);
 //		WebUI.switchToFrameByIndex(0);

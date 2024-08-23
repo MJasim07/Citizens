@@ -44,7 +44,7 @@ public class Step_9Page_NV extends CommonPageCICA {
     	
     	WebUI.sleep(2);
 		WebUI.clickElement(Upload_Application);
-		WebUI.sleep(4);
+		WebUI.sleep(2);
 		
     }
     

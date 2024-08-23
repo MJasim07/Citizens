@@ -346,19 +346,19 @@ public class Step_1Page_NV extends CommonPageCICA{
 				try {
 						DriverManager.getDriver().findElement(step_2).isDisplayed();
 						WebUI.sleep(1);
-						WebUI.clickElement(step1);
-						WebUI.sleep(1);
+//						WebUI.clickElement(step1);
+//						WebUI.sleep(1);
 						
 						//For Notice Popup
-						try {
-							DriverManager.getDriver().findElement(impNotice_Popup).isDisplayed();
-							WebUI.sleep(0.5);
-							WebUI.clickElement(impNotice_Popup);
-							
-						}catch(Exception ex)
-						{
-							System.out.println("Notice Popup Did Not Appear. "+ex.getMessage());
-						}
+//						try {
+//							DriverManager.getDriver().findElement(impNotice_Popup).isDisplayed();
+//							WebUI.sleep(0.5);
+//							WebUI.clickElement(impNotice_Popup);
+//							
+//						}catch(Exception ex)
+//						{
+//							System.out.println("Notice Popup Did Not Appear. "+ex.getMessage());
+//						}
 				}
 				catch(Exception Ex1)
 				{
@@ -406,13 +406,13 @@ public class Step_1Page_NV extends CommonPageCICA{
 		
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 		
-		WebUI.sleep(0.5);
-		WebUI.scrollToElementAtBottom(calculate);
-		WebUI.sleep(0.5);
-		WebUI.clickElement(calculate);
-		WebUI.sleep(1);
-		WebUI.moveToElement(Nextstep_1);
-		WebUI.clickElementWithJs(Nextstep_1);
+//		WebUI.sleep(0.5);
+//		WebUI.scrollToElementAtBottom(calculate);
+//		WebUI.sleep(0.5);
+//		WebUI.clickElement(calculate);
+//		WebUI.sleep(1);
+//		WebUI.moveToElement(Nextstep_1);
+//		WebUI.clickElementWithJs(Nextstep_1);
 		WebUI.sleep(1);
 		WebUI.waitForPageLoaded();
 		WebUI.verifyElementVisible(step_2);

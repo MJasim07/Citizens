@@ -26,10 +26,10 @@ public class Step_8Page extends CommonPageCICA {
 		private By HoldDateRadioButton_Yes = By.xpath("//ion-radio-group[@formcontrolname='HoldDateCheckBox']/ion-row/ion-col[1]/ion-item/ion-radio");
 		private By HoldDate_Textbox = By.xpath("//input[@formcontrolname='HoldDate']");
 		private By HoldDate_ErrorMsg = By.xpath("//input[@formcontrolname='HoldDate']/parent::ion-item/parent::ion-col");
-		private By Error_SignedCity = By.xpath("(//ion-col[@class = 'md hydrated' and @size-md = '12' and @size='24'])[8]");
-		private By Error_SignatureProposedInsurer = By.xpath("(//h3[text()='Signature']/following-sibling::ion-row[2]/ion-col[@size='24' and @size-md='6'])[1]");
+		private By Error_SignedCity = By.xpath("(//h3[.='Signature']/following-sibling::ion-row/ion-col)[1]");
+		private By Error_SignatureProposedInsurer = By.xpath("(//h3[.='Signature']/following-sibling::ion-row/ion-col)[3]");
 		private By ProposedInsurerSignature = By.xpath("//h3[.='Signature']/following-sibling::ion-row[2]/ion-col/div/ion-button");
-		private By Error_SignatureOfOwner = By.xpath("(//h3[text()='Signature']/following-sibling::ion-row[3]/ion-col[@size='24' and @size-md='6'])[1]");
+		private By Error_SignatureOfOwner = By.xpath("(//h3[.='Signature']/following-sibling::ion-row/ion-col)[6]");
 		private By SignatureOfOwner = By.xpath("//h3[.='Signature']/following-sibling::ion-row[3]/ion-col/div/ion-button");
 		private By signature_pad1 = By.xpath("(//canvas[@class='signature-pad-canvas hidden-xs-down'])[1]");
 		private By Padding_Right1 = By.xpath("(//ion-col[@style='padding-right: 20px;']/ion-button)[1]");
